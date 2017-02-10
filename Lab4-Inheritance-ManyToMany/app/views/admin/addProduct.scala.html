@@ -27,9 +27,8 @@
 		@for((value,name)   <- Category.options)  {
 			<input type="checkbox" name="catSelect[]" value="@value"
 			@if(addProductForm("id").value() != null) {
-				@if(Category.inCategory(value.toLong,addProductForm("id").value().toLong))
-			{
-				checked
+				@if(Category.inCategory(value.toLong,addProductForm("id").value().toLong){
+				checked;
 				}
 		}
 		}
@@ -60,7 +59,12 @@
 			<a href="@routes.AdminController.products()"><button class="btn btn-warning">Cancel</button>
 	  		</a>
   </div>
-	} <!-- End Form definition -->
+	 <!-- End Form definition -->
+		}
 
-} <!-- End of page content -->
+  }
+
+
+
+
 
